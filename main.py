@@ -23,7 +23,7 @@ guessed_state = []
     # turtle.mainloop()
 
 while len(guessed_state) < 37:
-    answer_state = (screen.textinput(title= f"{len(guessed_state)}/37 States and UT Correct", prompt="Whats the name of another state")).title().strip()
+    answer_state = (screen.textinput(title= f"{len(guessed_state)}/37 States and UT Correct", prompt="Name a State or Union Territory      ")).title().strip()
     if answer_state == "Exit":
         states_to_learn = []
         for states in state_list:
