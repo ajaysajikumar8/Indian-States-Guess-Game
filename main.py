@@ -25,10 +25,7 @@ guessed_state = []
 while len(guessed_state) < 37:
     answer_state = (screen.textinput(title= f"{len(guessed_state)}/37 States and UT Correct", prompt="Name a State or Union Territory      ")).title().strip()
     if answer_state == "Exit":
-        states_to_learn = []
-        for states in state_list:
-            if states not in guessed_state:
-                states_to_learn.append(states)
+        states_to_learn = [state for state in state_list if state not in guessed_state]
         new_data = pd.DataFrame(states_to_learn)
         new_data.to_csv("States_to_learn.csv")
         break
